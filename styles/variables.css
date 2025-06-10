@@ -4,7 +4,11 @@
     --accent-font: 'PressStart2P', sans-serif;
     --font-size: 18px;
     --text-weight: 400;
-    --title-weight: 700:
+    --title-weight: 700;
+    --text-color: #000000;
+    --bg-color: #FFFFFF;
+    --content-widht: clamp(18.75rem, 100%, 43.8rem);
+
 
 
 }
