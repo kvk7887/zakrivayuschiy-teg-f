@@ -212,6 +212,7 @@
   padding-inline-start: 19px;
   padding-inline-end: 21px;
   overflow: hidden;
+  margin-block-end: 100px;
 }
 
 .floppy__svg {
