@@ -9,6 +9,16 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+@keyframes scaleHeart {
+from { transform: scale(1); }
+to   { transform: scale(1.25); }
+}
+
+@keyframes sparkle {
+from { opacity: 1; }
+to   { opacity: 0; }
+}
+
 .card__icon-button .core {
     fill: transparent;
     transition: fill 0.3s ease 0.3s;
@@ -20,21 +30,54 @@
 }
 
 .card__icon-button:hover .core {
-    fill: var(--heart-color);
+    fill: var(--contour-color);
     transition: fill 0.3s ease;
 }
 
 .card__icon-button:hover .main-body {
-    fill: var(--heart-color);
+    fill: var(--contour-color);
     transition: fill 0.3s ease 0.5s;
 }
 
 .card__icon-button:active .core {
-    fill: var(--heart-sparks);
+    fill: var(--contour-color);
     transition: fill 0.3s ease;
 }
 
 .card__icon-button:active .main-body {
-    fill: var(--heart-sparks);
+    fill: var(--animation-fill-color);
     transition: fill 0.3s ease 0.5s;
+}
+
+
+
+
+.card__icon-button .is-liked .core {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s linear 0s;
+}
+
+
+.card__icon-button .is-liked .main-body {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.card__icon-button .is-liked .contour {
+    fill: var(--animation-fill-color);
+    transition: fill 0.3s linear 0.06s;
+}
+
+.card__icon-button .is-liked {
+    animation: scaleHeart 0.3s ease-in 0.1s 1;
+    transform-origin: center;
+}
+  
+.card__icon-button .is-liked .sparks {
+    animation: sparkle 0.3s ease-in 0.3s 1;
+}
+
+.card__icon-button:focus-visible {
+    outline-color: black;
+    transition:  outline-color 0.3s linear;
 }

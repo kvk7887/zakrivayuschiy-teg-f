@@ -22,6 +22,7 @@
   gap: 100px;
   background-image: var(--bg-image);
   background-attachment: fixed;
+  font-variation-settings: "wght" var(--text-weight);
 }
 
 .header,
@@ -37,8 +38,7 @@
 }
 
 .border {
-  border: none;
-  outline: 2px solid #000;
+  border: 2px solid #000;
 }
 
 .header {
@@ -61,25 +61,26 @@
 }
 
 .content {
+  max-width: 696px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 50.6px;
   justify-content: center;
   align-items: center;
 }
 
 .content__text {
   padding-block: 25px;
-  padding-inline: 25px;
+  padding-inline: 24.6px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 26px;
 }
 
 .content__title {
   font-size: var(--font-size);
   padding-inline-start: 10px;
-  padding-block: 3px;
+  padding-block: 5px;
 }
 
 .img {
@@ -88,45 +89,82 @@
   object-position: center;
   inline-size: 100%;
   max-block-size: 100%;
+  max-width: 696px;
+  max-height: 696px;
 }
 
 .content__img {
   position: relative;
+  display: flex;
 }
 
 .img__label {
   position: absolute;
   inset-block-start: 25px;
+  inset-inline-end: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   z-index: 1;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 1);
+  text-shadow: 0 0 1px var(--shadow-color);
 }
 
 .text__box {
   font-weight: var(--text-weight);
+  line-height: 21px;
+  letter-spacing: 0.4px;
 }
 
 .text {
   padding-block-end: 27px;
 }
 
+.filter__brightness {
+  filter: brightness(2.3);
+}
+
+.filter__saturate {
+  filter: saturate(2.5);
+}
+
+.filter__multy {
+  filter: brightness(1.5) invert(1.9);
+}
+
+.filter__hue-rotate {
+  filter: hue-rotate(-28deg);
+}
+
+.filter__contrast {
+  filter: contrast(2.5);
+}
+
+.filter__sepia {
+  filter: sepia(50%);
+}
+
+.filter__drop-shadow { 
+  filter: 
+  drop-shadow(6px 6px 8px #c4e5ee)
+  drop-shadow(5px 5px 3px #b7e2ee)
+  drop-shadow(2px 1px 5px #4990ae)
+  drop-shadow(3px 3px 3px #c4e5ee);
+  
+}
+
 .buttons__box {
   align-self: flex-end;
   display: flex;
-  gap: 12px;
+  gap: 4px;
 }
 
 .button {
   background-color: var(--bg-color);
-  border: none;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
 }
 
-.button:focus-visible {
+.card__like-button:focus {
   box-shadow: 2px 2px 0 1px var(--text-color);
 }
 
@@ -139,38 +177,51 @@
   background: var(--text-color);
   transition: translate 0.5s ease-in-out;
   translate: -100%;
-  animation-name: like;
 }
 
+.button__dialog:hover::before,
 .button__save:hover::before,
 .card__like-button:hover::before {
   translate: 0%;
 }
 
-.card__icon-button {
+.card__icon-button,
+.card__icon-button:focus-visible,
+.card__icon-button:focus {
+  border: none;
 }
 
-.card__icon-button:focus,
+.card__icon-button .sparks {
+  opacity: 0;
+}
+
+.card__icon-button {
+  width: 39px;
+  height: 37px;
+  padding: 0;
+}
+
 .card__icon-button:focus-visible {
-  border: none;
-  outline: none;
-  
+  outline: 2px solid #000;
+  transition: outline 0.3s ease;
 }
 
 .card__like-button {
-  padding-block: 12.5px;
-  padding-inline: 37px;
+  width: 130px;
+  overflow: hidden;
 }
 
 .button__save {
-  padding-block: 18px;
+  padding-block: 15px;
   padding-inline-start: 19px;
   padding-inline-end: 21px;
+  overflow: hidden;
 }
 
 .floppy__svg {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
+  vertical-align: bottom;
 }
 
 .decore__text {
@@ -195,7 +246,7 @@
 .description__dialog {
   display: flex;
   gap: 20px;
-  white-space: break-spaces;
+  align-items: center;
   line-height: 135%;
   margin-block-end: 30px;
 }
@@ -204,6 +255,56 @@
   padding-block: 12.5px;
   padding-inline: 132.5px;
   text-transform: uppercase;
+  overflow: hidden;
 }
-.dialog[open]::backdrop {
+
+.floppy__dialog::backdrop {
+  background-color: #000;
+  opacity: 75%;
+}
+
+@supports ((-webkit-text-stroke: 1px var(--shadow-color))) {
+  .img__label {
+    text-shadow: none;    
+    -webkit-text-stroke: 1px var(--shadow-color);
+  }  
+}
+
+@media (width <= 375px) {
+  .header {
+    padding-block: 7.5rem;
+    padding-inline: 0.88rem;
+  }
+
+  .content {
+    gap: 51px;
+  }
+
+  .content__title {
+    padding-inline: 10px;
+    padding-block-start: 5.9px;
+    padding-block-end: 4px;
+  }
+
+  .content__text {
+    padding-inline: 25.7px;
+    padding-block: 23.3px;
+    gap: 25px;
+  }
+
+  .img {
+    min-height: 371px;
+  }
+
+  .img__label {
+    inset-inline-end: 13px;
+  }
+
+  .button__save {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  
 }
