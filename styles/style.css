@@ -142,13 +142,9 @@
   filter: sepia(50%);
 }
 
-.filter__drop-shadow { 
-  filter: 
-  drop-shadow(6px 6px 8px #c4e5ee)
-  drop-shadow(5px 5px 3px #b7e2ee)
-  drop-shadow(2px 1px 5px #4990ae)
-  drop-shadow(3px 3px 3px #c4e5ee);
-  
+.filter__drop-shadow {
+  filter: drop-shadow(6px 6px 8px #c4e5ee) drop-shadow(5px 5px 3px #b7e2ee)
+    drop-shadow(2px 1px 5px #4990ae) drop-shadow(3px 3px 3px #c4e5ee);
 }
 
 .buttons__box {
@@ -265,9 +261,9 @@
 
 @supports ((-webkit-text-stroke: 1px var(--shadow-color))) {
   .img__label {
-    text-shadow: none;    
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--shadow-color);
-  }  
+  }
 }
 
 @media (width <= 375px) {
@@ -306,5 +302,4 @@
     align-items: center;
     gap: 14px;
   }
-  
 }
