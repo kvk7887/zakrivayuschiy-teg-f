@@ -29,7 +29,7 @@
 
 .card__icon-button .core {
   fill: transparent;
-  transition: fill 0.3s ease 0.3s;
+  transition: fill 0.3s ease 0.03s;
 }
 
 .card__icon-button .main-body {
@@ -44,7 +44,7 @@
 
 .card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  transition: fill 0.3s ease 0.5s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .card__icon-button:active .core {
@@ -54,7 +54,7 @@
 
 .card__icon-button:active .main-body {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease 0.5s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .card__icon-button .is-liked .core {
