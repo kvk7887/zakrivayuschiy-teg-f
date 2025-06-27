@@ -18,7 +18,7 @@
   padding-block-start: 6.25rem;
   display: flex;
   align-items: center;
-  flex-direction: column;  
+  flex-direction: column;
   background-image: var(--bg-image);
   background-attachment: fixed;
   font-variation-settings: "wght" var(--text-weight);
@@ -243,9 +243,8 @@
   max-width: 353px;
   padding-inline: 30px;
   padding-block: 30px;
-  
-  text-transform: uppercase;
 
+  text-transform: uppercase;
 }
 
 .dialog__floppy__svg {
@@ -329,5 +328,4 @@
   .floppy__dialog {
     padding-inline: 42px;
   }
-  
 }
