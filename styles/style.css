@@ -19,7 +19,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 100px;
   background-image: var(--bg-image);
   background-attachment: fixed;
   font-variation-settings: "wght" var(--text-weight);
@@ -55,6 +54,7 @@
   padding-block: 8rem;
   padding-inline: 7.5rem;
   text-transform: uppercase;
+  margin-block-end: 100px;
 }
 
 .header__title {
@@ -85,7 +85,7 @@
 
 .content__title {
   font-size: var(--font-size);
-  font-weight: var(--title-weight);
+  font-variation-settings: "wght" var(--title-weight);
   padding-inline-start: 10px;
   padding-block: 5px;
 }
@@ -167,13 +167,25 @@
   cursor: pointer;
   position: relative;
 }
+.button:focus {
+  box-shadow: 2px 2px 0 1px var(--text-color);
+}
+.button:focus-visible {
+  outline: none;
+}
+
+.button__text {
+  mix-blend-mode: difference;
+  color: var(--bg-color);
+  font-family: var(--accent-font);
+  font-weight: var(--text-weight);
+  font-size: var(--accent-font-size);
+}
 
 .card__like-button {
   width: 130px;
   overflow: hidden;
 }
-
-
 
 .button__decore::before {
   content: "";
@@ -192,6 +204,7 @@
 .card__icon-button:focus-visible,
 .card__icon-button:focus {
   border: none;
+  box-shadow: none;
 }
 
 .card__icon-button .sparks {
@@ -218,18 +231,6 @@
   padding-inline-start: 19px;
   padding-inline-end: 21px;
   overflow: hidden;
-  }
-
-.button__save:focus,
-.card__like-button:focus,
-.button__dialog:focus {
-  box-shadow: 2px 2px 0 1px var(--text-color);
-}
-
-.button__save:focus-visible,
-.card__like-button:focus-visible,
-.button__dialog:focus-visible {
-  outline: none;
 }
 
 .floppy__svg {
@@ -238,22 +239,16 @@
   vertical-align: bottom;
 }
 
-.decore__text {
-  mix-blend-mode: difference;
-  color: var(--bg-color);
-}
-
 .floppy__dialog {
   max-width: 353px;
   padding-inline: 30px;
   padding-block: 30px;
-  
-  text-transform: uppercase;
 
+  text-transform: uppercase;
 }
 
 .dialog__floppy__svg {
-  width: 50px;
+  width: 52px;
   height: 50px;
 }
 
@@ -276,7 +271,7 @@
   opacity: 75%;
 }
 
-.floppy__dialog .description__dialog .decore__text {
+.floppy__dialog .description__dialog .dialog__text {
   width: fit-content;
   line-height: 150%;
 }
@@ -333,5 +328,4 @@
   .floppy__dialog {
     padding-inline: 42px;
   }
-  
 }
