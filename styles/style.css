@@ -167,9 +167,11 @@
   cursor: pointer;
   position: relative;
 }
+
 .button:focus {
   box-shadow: 2px 2px 0 1px var(--text-color);
 }
+
 .button:focus-visible {
   outline: none;
 }
@@ -237,13 +239,16 @@
   width: 21px;
   height: 21px;
   vertical-align: bottom;
+  background-color: transparent;
+  mix-blend-mode: difference;
+  fill: white;
+  color: #fff;
 }
 
 .floppy__dialog {
   max-width: 353px;
   padding-inline: 30px;
   padding-block: 30px;
-
   text-transform: uppercase;
 }
 
@@ -318,11 +323,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 6px;
   }
+
   .floppy__svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .floppy__dialog {
